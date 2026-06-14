@@ -1,3 +1,25 @@
-This a documentation of the technical stock research methodology developed for the JSE Investment Challenge ny the team Optima.
+Optima Method
+A technical stock research methodology for the JSE Investment Challenge.
 
-It filters assets using linear regression—keeping only those with a positive trend—then analyzes price returns (accounting for dividends, splits, and corporate actions), momentum (1m, 3m, 6m), 20/50-day moving averages for bullish/bearish signals, 14-day RSI (overbought >70, oversold <30), annualized volatility (sd(returns) × √252), and Sharpe ratio for risk-adjusted returns. The final scoring model is weighted as 40% Momentum_3m + 30% Sharpe + 20% RSI_norm + 10% Trend_Signal. Scores >0.5 = Strong Buy, 0.25–0.5 = Buy, 0–0.25 = Hold, <0 = Sell. Requires R with libraries: ggplot2, quantmod, tidyverse, PerformanceAnalytics, TTR, yfR. — Kgoana K.B Mametja, Optima Team.
+How It Works (Step by Step)
+- Linear Regression Filter – Keep only stocks with a positive trend. Flat or negative trends are discarded immediately. ✅
+- Price Return Analysis – Adjusts for dividends, stock splits, and corporate actions. 📊
+- Momentum – Measures price change over 1, 3, and 6 months. ⚡
+- Moving Averages (20 & 50 day) – Bullish signal when Price > MA20 > MA50. 📉
+- RSI (14-day) – Overbought above 70, oversold below 30. 🔢
+- Volatility – Annualized as sd(returns) × √252. 🎢
+- Sharpe Ratio – Risk-adjusted return. Higher is better. 🏆
+- Scoring Model – Weighted composite score. 🧮
+
+Scoring Formula
+Score = 0.4(Momentum_3m) + 0.3(Sharpe) + 0.2(RSI_norm) + 0.1(Trend_Signal)
+
+Score	Recommendation
+> 0.5	Strong Buy 🟢
+0.25 – 0.5	Buy 📈
+0 – 0.25	Hold ⏸️
+< 0	Sell 🔴
+
+Author
+Kgoana K.B Mametja – Optima Team
+
